@@ -1,0 +1,47 @@
+# Core Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# LangChain Ecosystem
+LangChain
+langchain-community
+langchain-google-genai
+langchain-chroma
+langchain-core
+
+# Vector Store
+chromadb
+
+# Google AI
+google-generativeai
+google-api-core
+
+# Document Processing
+pypdf
+python-docx
+docx2txt
+unstructured
+
+# Text Processing
+tiktoken
+
+# Rate Limiting
+slowapi
+
+# File Validation (Optional but recommended)
+python-magic
+# For Windows users: python-magic-bin==0.4.14
+
+# Utilities
+python-multipart
+pytz
+
+# Development/Testing (Optional)
+pytest
+pytest-asyncio
+httpx
+
+# Logging (Enhanced)
+python-json-logger

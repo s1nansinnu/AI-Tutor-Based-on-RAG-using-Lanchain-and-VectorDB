@@ -1,0 +1,350 @@
+.mascot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+  position: relative;
+}
+
+.mascot {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.mascot-head {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+  border: 8px solid #fff;
+}
+
+/* Antenna */
+.antenna {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 35px;
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+.antenna-ball {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: #667eea;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+  animation: pulse-light 2s infinite;
+}
+
+@keyframes pulse-light {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(102, 126, 234, 1);
+  }
+}
+
+/* Face screen */
+.face-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 180px;
+  background: linear-gradient(145deg, #1e1b4b, #312e81);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Eyes */
+.eyes {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.eye {
+  width: 45px;
+  height: 45px;
+  background: #60a5fa;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+  transition: all 0.3s ease;
+}
+
+.pupil {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #1e3a8a;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+/* Eye animations based on emotion */
+.eyes-happy .eye {
+  background: #fbbf24;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+  height: 40px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.eyes-thinking .eye {
+  background: #a78bfa;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.8);
+  transform: translateX(-5px);
+}
+
+.eyes-thinking .right-eye {
+  transform: translateX(5px);
+}
+
+.eyes-encouraging .eye {
+  background: #34d399;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.8);
+  animation: wink 2s infinite;
+}
+
+@keyframes wink {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  45%, 55% {
+    transform: scaleY(0.1);
+  }
+}
+
+.eyes-explaining .pupil {
+  animation: look-around 3s infinite;
+}
+
+@keyframes look-around {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-70%, -50%);
+  }
+  50% {
+    transform: translate(-30%, -50%);
+  }
+  75% {
+    transform: translate(-50%, -70%);
+  }
+}
+
+/* Mouth */
+.mouth {
+  width: 80px;
+  height: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mouth-neutral {
+  border-bottom: 4px solid #60a5fa;
+  border-radius: 0 0 40px 40px;
+  width: 60px;
+}
+
+.mouth-happy {
+  border: 4px solid #fbbf24;
+  border-radius: 0 0 50px 50px;
+  border-top: none;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+}
+
+.mouth-thinking {
+  width: 50px;
+  height: 8px;
+  background: #a78bfa;
+  border-radius: 10px;
+}
+
+.mouth-encouraging {
+  border: 4px solid #34d399;
+  border-radius: 50px;
+  width: 70px;
+  height: 35px;
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.5);
+}
+
+.mouth-explaining {
+  width: 60px;
+  height: 30px;
+  border: 3px solid #60a5fa;
+  border-radius: 50%;
+  animation: talk 0.5s infinite;
+}
+
+.mouth-speaking {
+  animation: speak 0.2s infinite;
+}
+
+@keyframes speak {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes talk {
+  0%, 100% {
+    height: 30px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+
+/* Ears */
+.ear {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: #fb923c;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-ear {
+  left: -15px;
+}
+
+.right-ear {
+  right: -15px;
+}
+
+/* Emotion indicator */
+.emotion-indicator {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.emotion-label {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  animation: pulse-label 2s infinite;
+}
+
+@keyframes pulse-label {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Speech bubble */
+.speech-bubble {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+.speech-content {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mascot-head {
+    width: 200px;
+    height: 200px;
+  }
+
+  .face-screen {
+    width: 160px;
+    height: 130px;
+  }
+
+  .eyes {
+    gap: 35px;
+  }
+
+  .eye {
+    width: 35px;
+    height: 35px;
+  }
+
+  .speech-bubble {
+    max-width: 200px;
+    font-size: 12px;
+  }
+}
